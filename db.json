@@ -1,0 +1,30 @@
+{
+
+	"products": [
+		{
+			"id": 1,
+			"productName": "Laptop",
+			"quantity": 5,
+			"price": "$2000"
+		},
+		{
+			"id": 2,
+			"productName": "TV",
+			"quantity": 2,
+			"price": "$100"
+		},
+		{
+			"id": 3,
+			"productName": "Cellphone",
+			"quantity": 5,
+			"price": "$800"
+		},
+		{
+			"id": 1,
+			"productName": "Laptop",
+			"quantity": 5,
+			"price": "$1000"
+		}
+	
+	]
+}

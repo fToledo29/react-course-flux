@@ -1,0 +1,25 @@
+.App {
+  /* text-align: center; */
+  padding: 2rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+button {
+	margin: 1rem;
+}
+
+nav {
+	padding: 2rem;
+}
+
+.nav-link {
+	margin: 1rem;
+}
+
+.active {
+	color: red;
+}
