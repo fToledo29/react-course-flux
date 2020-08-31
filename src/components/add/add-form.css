@@ -1,0 +1,13 @@
+form {
+	width: 20rem;
+	height: 15rem;
+	border: 1px solid black;
+	display: flex;
+	flex-flow: column;
+}
+
+.form-field {
+	margin: 1rem;
+	display: flex;
+	justify-content: space-between;
+}

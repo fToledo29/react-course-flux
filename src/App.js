@@ -3,6 +3,8 @@ import './App.css';
 import AllProductsPage from './components/all-products-page/all-products-page';
 import { BrowserRouter as  Router, NavLink, Route, Switch } from 'react-router-dom';
 import { About } from './components/about/about';
+import FormikAddForm from './components/add/add-form';
+import { ProductDetail } from './components/product-detail/product-details';
 
 
 class Links extends React.Component {
@@ -26,6 +28,8 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={About} />
 					<Route path="/products" component={AllProductsPage} />
+					<Route path="/addProduct" component={FormikAddForm} />
+					<Route path="/product/:productId" component={ProductDetail} />
 				</Switch>
 			</div>
 		</Router>

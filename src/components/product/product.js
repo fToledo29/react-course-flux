@@ -1,6 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Product = (props) => {
+
+
+	const path = `/product/${props.id}`;
 
 	return (
 		<tr>
@@ -8,7 +12,7 @@ export const Product = (props) => {
 				{props.id}
 			</td>
 			<td>
-				{props.productName}
+				<Link to={path} > {props.productName}</Link>
 			</td>
 			<td>
 				{props.quantity}

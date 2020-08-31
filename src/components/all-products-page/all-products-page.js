@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ProductList } from '../product-list/product-list'
 import ProductsApi from '../../data/products-api';
+import { Link } from 'react-router-dom';
+import './all-products-page.css';
 
 export default class AllProductsPage extends Component {
 
@@ -25,7 +27,13 @@ export default class AllProductsPage extends Component {
 			<div>
 				<h1>Product list</h1>
 
-				<ProductList data={this.state.products}></ProductList>		
+				<div className="product-list">
+					<ProductList data={this.state.products}></ProductList>
+				</div>
+
+				<div>
+					<Link to={{ pathname: '/addProduct' }}> Add Products </Link>
+				</div>		
 			</div>
 		)
 	}

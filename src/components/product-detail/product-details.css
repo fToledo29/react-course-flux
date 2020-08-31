@@ -1,0 +1,11 @@
+.product-details h1{
+	margin-bottom: 2rem;
+}
+
+.product-detail {
+	padding: 1rem;
+}
+
+.product-details .product-detail:nth-child(2){
+	margin-bottom: 1rem;
+}

@@ -20,10 +20,16 @@
 			"price": "$800"
 		},
 		{
-			"id": 1,
+			"id": 5,
 			"productName": "Laptop",
 			"quantity": 5,
 			"price": "$1000"
+		},
+		{
+			"id": 6,
+			"productName": "PSP",
+			"quantity": 5,
+			"price": "$1500"
 		}
 	
 	]
