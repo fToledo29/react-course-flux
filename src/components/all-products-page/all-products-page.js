@@ -3,23 +3,32 @@ import { ProductList } from '../product-list/product-list'
 import ProductsApi from '../../data/products-api';
 import { Link } from 'react-router-dom';
 import './all-products-page.css';
+import ProductStore from '../../stores/productStore';
+import InitializeActions from '../../actions/initialize-actions';
 
 export default class AllProductsPage extends Component {
 
 	constructor(props) {
 		super(props);
+
+		this._onChange =  this._onChange.bind(this);
+
 		this.state = {
-			products: []
+			products: ProductStore.getAllProducts()
 		};
 	}
 
+	_onChange() {
+		this.setState({products: ProductStore.getAllProducts()});
+	}
 
 	componentDidMount() {
-		ProductsApi.getAllProducts().then((products) => {
-			this.setState({ products: products.data});
-		}).catch((error) => {
-			console.log("Error: ", error);
-		});
+		ProductStore.addChangelistener(this._onChange);
+		InitializeActions.initProducts();
+	}
+
+	componentWillUnmount() {
+		ProductStore.removeChangeListener(this._onChange)
 	}
 
 	render() {

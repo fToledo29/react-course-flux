@@ -2,7 +2,10 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import './add-form.css';
 
-export const AddForm = ({ values }) => {
+export const AddForm = ({ onSave, values }) => {
+
+	
+
 	return (
 		<div>
 			<Form>
@@ -32,6 +35,9 @@ const FormikAddForm = withFormik({
 			quantity: quantity || '',
 			price: price || '',
 		};
+	},
+	handleSubmit(values, {resetForm, setStatus, setSubmitting, setErrors}) {
+
 	}
 })(AddForm);
 
