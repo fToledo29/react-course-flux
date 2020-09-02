@@ -8,6 +8,8 @@ export const ProductList = (props) => {
 	
 	productData = props.data;
 
+	console.log('props.data: ', props.data);
+
 	return (
 		<table>
 			<thead>

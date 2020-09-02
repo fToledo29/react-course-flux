@@ -1,8 +1,8 @@
 
-import React from 'react'
-import { AddForm } from "../add/add-form"
+import React from 'react';
 import ProductActions from '../../actions/product-actions';
 import { withRouter } from 'react-router-dom';
+import FormikAddForm from '../add/add-form';
 
 class AddProductPage extends React.Component {
 
@@ -12,6 +12,7 @@ class AddProductPage extends React.Component {
 	}
 
 	saveProduct(product) {
+		console.log('product to save: ', product);
 		ProductActions.addProduct(product);
 		this.props.history.push('/');
 	}
@@ -19,7 +20,7 @@ class AddProductPage extends React.Component {
 
 	render() {
 		return (
-			<AddForm onSave={this.saveProduct}></AddForm>
+			<FormikAddForm onSave={this.saveProduct}></FormikAddForm>
 		)
 	}
 }

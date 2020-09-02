@@ -2,9 +2,7 @@ import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import './add-form.css';
 
-export const AddForm = ({ onSave, values }) => {
-
-	
+export const AddForm = ({ values }) => {
 
 	return (
 		<div>
@@ -23,6 +21,8 @@ export const AddForm = ({ onSave, values }) => {
 					<label>Price:</label>
 					<Field value={values.price} name="price" placeholder="Price"/>
 				</div>
+
+				<button type="submit">Submit</button>
 			</Form>
 		</div>
 	)
@@ -36,8 +36,9 @@ const FormikAddForm = withFormik({
 			price: price || '',
 		};
 	},
-	handleSubmit(values, {resetForm, setStatus, setSubmitting, setErrors}) {
-
+	handleSubmit(values, { props, resetForm, setStatus, setSubmitting, setErrors}) {
+		console.log('values: ', values);
+		props.onSave(values);
 	}
 })(AddForm);
 

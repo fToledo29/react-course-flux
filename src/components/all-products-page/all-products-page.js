@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { ProductList } from '../product-list/product-list'
 import ProductsApi from '../../data/products-api';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import './all-products-page.css';
 import ProductStore from '../../stores/productStore';
 import InitializeActions from '../../actions/initialize-actions';
 
-export default class AllProductsPage extends Component {
+export default class AllProductsPage extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -18,10 +18,6 @@ export default class AllProductsPage extends Component {
 		};
 	}
 
-	_onChange() {
-		this.setState({products: ProductStore.getAllProducts()});
-	}
-
 	componentDidMount() {
 		ProductStore.addChangelistener(this._onChange);
 		InitializeActions.initProducts();
@@ -30,8 +26,17 @@ export default class AllProductsPage extends Component {
 	componentWillUnmount() {
 		ProductStore.removeChangeListener(this._onChange)
 	}
+	
+	_onChange() {
+		this.setState({products: ProductStore.getAllProducts()});
+	}
+
 
 	render() {
+
+
+		console.log('this.state.products: ', this.state.products);
+
 		return (
 			<div>
 				<h1>Product list</h1>
